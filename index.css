@@ -475,7 +475,7 @@ body:not(.user-is-tabbing) a:focus {
         url('./images/hand_gif.gif');
     height: 100vh;
     width: 100vw;
-    background-size: 40% auto;
+    background-size: 51% auto;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: repeat;
