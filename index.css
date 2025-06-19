@@ -112,6 +112,8 @@ body {
     line-height: var(--line-height-normal);
     background: var(--light-bg);
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .row {
@@ -472,11 +474,14 @@ body:not(.user-is-tabbing) a:focus {
     background: linear-gradient(rgba(0,0,0, .3), rgba(0,0,0, .5)), 
         url('./images/hand_gif.gif');
     height: 100vh;
+    width: 100vw;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-size: var(--font-size-normal);
+    position: relative;
+    overflow: hidden;
 }
 
 .header__text {
@@ -490,7 +495,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text h1,
 .header__text .heading-primary {
-    color: var(--dark-text) !important;
+    color: #dc3545 !important;
 }
 
 .header__text p {
@@ -498,7 +503,7 @@ body:not(.user-is-tabbing) a:focus {
     max-width: var(--container-medium-width);
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
-    color: var(--dark-text);
+    color: #dc3545;
 }
 
 @media(max-width: 500px) {
