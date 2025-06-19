@@ -55,123 +55,162 @@
     <section class="work" id="work">
       <div class="row">
         <h2>My Work</h2>
-        <div class="work__boxes">
+        <div class="work__gallery">
 
-          <!-- Each div with the work__box class is a project. -->
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Hand Exoskeleton</h3>
-              <p>
-                A 3D printed hand exoskeleton with a custom designed 4 layer PCB.
-              </p>
-              <ul class="work__list">
-                <li>Altium Desinger</li>
-                <li>Embedded C</li>
-                <li>Solidworks</li>
-                <li>Microsoft Azure</li>
-                <li>Node-RED</li>
-                <li>FreeRTOS</li>
-                <li>Motor Control</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://ese5160.github.io/a14g-final-submission-s25-t20-the-ohmies/index.html" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
+          <!-- Project Cards -->
+          <div class="project-card" onclick="toggleProjectDetails('project1')">
+            <div class="project-card__image">
+              <img src="./images/Setup_Explained.jpg" alt="Hand Exoskeleton" />
+              <div class="project-card__overlay">
+                <h3>Hand Exoskeleton</h3>
+                <p>Click to learn more</p>
               </div>
-            </div>
-
-            <div class="work__image-box">
-              <img src="./images/Setup_Explained.jpg" class="work__image" alt="Project 1" />
             </div>
           </div>
 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>EMG-controlled Robot Hand</h3>
-              <p>
-                A robot hand that mirrors the finger movement of the user.
-              </p>
-              <ul class="work__list">
-                <li>Tensorflow Lite</li>
-                <li>Embedded C</li>
-                <li>3D Printing</li>
-                <li>Signal Processing</li>
-                <li>I2C Communication</li>
-                <li>Motor Control</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://youtube.com/shorts/Oa_ayxy1Hmw?si=7xHJGw3SRyIjw4SK" target="_blank" class="link__text">
-                  Demo Video<span>&rarr;</span>
-                </a>
-                <!-- <a href="https://github.com/w-jhu/emg-controlled-robotic-hand/tree/main/EMG_Predictor_Xiao" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="GitHub">
-                </a> -->
+          <div class="project-card" onclick="toggleProjectDetails('project2')">
+            <div class="project-card__image">
+              <img src="./images/demo.gif" alt="EMG-controlled Robot Hand" />
+              <div class="project-card__overlay">
+                <h3>EMG-controlled Robot Hand</h3>
+                <p>Click to learn more</p>
               </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/demo.gif" class="work__image" alt="Project 1" />
             </div>
           </div>
 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Smart Water Bottle</h3>
-              <p>
-                A water bottle (prototype) that detects water quality, water level, and heart rate. In addition, it remotely tracks the user's daily hydration level and sends drinking reminders.
-              </p>
-              <ul class="work__list">
-                <li>Bare Metal C</li>
-                <li>ADC</li>
-                <li>Wireless Communciation</li>
-                <li>Timers and Interrupts</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://siyangll.github.io/Team13/" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <!-- <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a> -->
+          <div class="project-card" onclick="toggleProjectDetails('project3')">
+            <div class="project-card__image">
+              <img src="./images/waterbottle.jpg" alt="Smart Water Bottle" />
+              <div class="project-card__overlay">
+                <h3>Smart Water Bottle</h3>
+                <p>Click to learn more</p>
               </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/waterbottle.jpg" class="work__image" alt="Project 2" />
             </div>
           </div>
 
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Pong Game</h3>
-              <p>
-                Single/two player pong game with player control on both physical joysticks and remote Blynk platform.
-              </p>
-              <ul class="work__list">
-                <li>Bare Metal C</li>
-                <li>Serial Communication</li>
-                <li>I2C Communication</li>
-                <li>ADC</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://youtube.com/shorts/zyvTbfTthCE" class="link__text">
-                  Demo Video<span>&rarr;</span>
-                </a>
-                <!-- <a href="#">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a> -->
+          <div class="project-card" onclick="toggleProjectDetails('project4')">
+            <div class="project-card__image">
+              <img src="./images/Pong1.gif" alt="Pong Game" />
+              <div class="project-card__overlay">
+                <h3>Pong Game</h3>
+                <p>Click to learn more</p>
               </div>
             </div>
-            <div class="work__image-box">
-              <img src="./images/Pong1.gif" class="work__image" alt="Project 3" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Details Modals -->
+    <div id="project1" class="project-details">
+      <div class="project-details__content">
+        <span class="project-details__close" onclick="toggleProjectDetails('project1')">&times;</span>
+        <div class="project-details__body">
+          <div class="project-details__image">
+            <img src="./images/Setup_Explained.jpg" alt="Hand Exoskeleton" />
+          </div>
+          <div class="project-details__text">
+            <h3>Hand Exoskeleton</h3>
+            <p>A 3D printed hand exoskeleton with a custom designed 4 layer PCB.</p>
+            <ul class="project-details__list">
+              <li>Altium Designer</li>
+              <li>Embedded C</li>
+              <li>Solidworks</li>
+              <li>Microsoft Azure</li>
+              <li>Node-RED</li>
+              <li>FreeRTOS</li>
+              <li>Motor Control</li>
+            </ul>
+            <div class="project-details__links">
+              <a href="https://ese5160.github.io/a14g-final-submission-s25-t20-the-ohmies/index.html" class="btn btn--pink" target="_blank">
+                Visit Site
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div id="project2" class="project-details">
+      <div class="project-details__content">
+        <span class="project-details__close" onclick="toggleProjectDetails('project2')">&times;</span>
+        <div class="project-details__body">
+          <div class="project-details__image">
+            <img src="./images/demo.gif" alt="EMG-controlled Robot Hand" />
+          </div>
+          <div class="project-details__text">
+            <h3>EMG-controlled Robot Hand</h3>
+            <p>A robot hand that mirrors the finger movement of the user.</p>
+            <ul class="project-details__list">
+              <li>Tensorflow Lite</li>
+              <li>Embedded C</li>
+              <li>3D Printing</li>
+              <li>Signal Processing</li>
+              <li>I2C Communication</li>
+              <li>Motor Control</li>
+            </ul>
+            <div class="project-details__links">
+              <a href="https://youtube.com/shorts/Oa_ayxy1Hmw?si=7xHJGw3SRyIjw4SK" class="btn btn--pink" target="_blank">
+                Demo Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project3" class="project-details">
+      <div class="project-details__content">
+        <span class="project-details__close" onclick="toggleProjectDetails('project3')">&times;</span>
+        <div class="project-details__body">
+          <div class="project-details__image">
+            <img src="./images/waterbottle.jpg" alt="Smart Water Bottle" />
+          </div>
+          <div class="project-details__text">
+            <h3>Smart Water Bottle</h3>
+            <p>A water bottle (prototype) that detects water quality, water level, and heart rate. In addition, it remotely tracks the user's daily hydration level and sends drinking reminders.</p>
+            <ul class="project-details__list">
+              <li>Bare Metal C</li>
+              <li>ADC</li>
+              <li>Wireless Communication</li>
+              <li>Timers and Interrupts</li>
+            </ul>
+            <div class="project-details__links">
+              <a href="https://siyangll.github.io/Team13/" class="btn btn--pink" target="_blank">
+                Visit Site
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project4" class="project-details">
+      <div class="project-details__content">
+        <span class="project-details__close" onclick="toggleProjectDetails('project4')">&times;</span>
+        <div class="project-details__body">
+          <div class="project-details__image">
+            <img src="./images/Pong1.gif" alt="Pong Game" />
+          </div>
+          <div class="project-details__text">
+            <h3>Pong Game</h3>
+            <p>Single/two player pong game with player control on both physical joysticks and remote Blynk platform.</p>
+            <ul class="project-details__list">
+              <li>Bare Metal C</li>
+              <li>Serial Communication</li>
+              <li>I2C Communication</li>
+              <li>ADC</li>
+            </ul>
+            <div class="project-details__links">
+              <a href="https://youtube.com/shorts/zyvTbfTthCE" class="btn btn--pink" target="_blank">
+                Demo Video
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ***** About ***** -->
 

@@ -58,7 +58,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Scroll reveal animation
 const revealElements = () => {
   const sections = document.querySelectorAll('section');
-  const workBoxes = document.querySelectorAll('.work__box');
   
   const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
@@ -76,34 +75,72 @@ const revealElements = () => {
     }
   });
   
-  // Reveal work boxes with staggered delay
-  workBoxes.forEach((box, index) => {
-    if (isInViewport(box) && !box.classList.contains('animated')) {
-      setTimeout(() => {
-        box.style.opacity = '1';
-        box.classList.add('animated');
-      }, index * 150); // Staggered animation
-    }
-  });
+  // Reveal project cards
+  revealProjectCards();
 };
 
 // Run on load and scroll
 window.addEventListener('load', revealElements);
 window.addEventListener('scroll', revealElements);
 
-// Add hover effect to work boxes
-const workBoxes = document.querySelectorAll('.work__box');
-workBoxes.forEach(box => {
-  box.addEventListener('mouseenter', () => {
-    box.style.transform = 'translateY(-10px)';
-    box.style.boxShadow = 'var(--box-shadow-hover)';
-  });
+// Project modal functionality
+function toggleProjectDetails(projectId) {
+  const modal = document.getElementById(projectId);
   
-  box.addEventListener('mouseleave', () => {
-    box.style.transform = 'translateY(0)';
-    box.style.boxShadow = 'var(--box-shadow)';
-  });
+  if (modal.classList.contains('active')) {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  } else {
+    // Close any other open modals
+    document.querySelectorAll('.project-details.active').forEach(openModal => {
+      openModal.classList.remove('active');
+    });
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Close modal when clicking outside the content
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('project-details')) {
+    e.target.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
 });
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const openModal = document.querySelector('.project-details.active');
+    if (openModal) {
+      openModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+});
+
+// Update scroll reveal for project cards
+const revealProjectCards = () => {
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  };
+  
+  projectCards.forEach((card, index) => {
+    if (isInViewport(card) && !card.classList.contains('animated')) {
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.classList.add('animated');
+      }, index * 150);
+    }
+  });
+};
 
 // Animate header elements
 document.addEventListener('DOMContentLoaded', () => {
