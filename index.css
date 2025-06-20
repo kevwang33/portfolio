@@ -472,7 +472,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header {
     background: linear-gradient(rgba(0,0,0, .3), rgba(0,0,0, .5)), 
-        url('./images/hand_gif.gif');
+        url('./images/3d_hand.gif');
     height: 100vh;
     width: 100vw;
     background-size: 57% auto;
