@@ -44,6 +44,16 @@
     100% { background-position: 0% 50%; }
 }
 
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #dc3545; }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -191,6 +201,7 @@ h2 {
     margin-bottom: var(--gutter-medium);
     animation: slideInLeft var(--transition-medium) forwards;
     opacity: 0;
+    color: #dc3545;
 }
 
 h2::after {
@@ -496,6 +507,12 @@ body:not(.user-is-tabbing) a:focus {
 .header__text h1,
 .header__text .heading-primary {
     color: #dc3545 !important;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #dc3545;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    margin: 0 auto;
+    display: inline-block;
 }
 
 .header__text p {
@@ -504,6 +521,9 @@ body:not(.user-is-tabbing) a:focus {
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
     color: #dc3545;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end) 1s both;
 }
 
 @media(max-width: 500px) {
