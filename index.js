@@ -156,5 +156,63 @@ document.addEventListener('DOMContentLoaded', () => {
       item.style.opacity = '1';
     }, 100 * (index + 1));
   });
+  
+  // Initialize typing animations
+  initializeTypingAnimations();
 });
+
+// Typing animation management
+function initializeTypingAnimations() {
+  const typingElements = document.querySelectorAll('.typing-effect, .typing-effect-fast, .typing-effect-medium');
+  
+  typingElements.forEach(element => {
+    // Calculate animation duration based on text length and type
+    const text = element.textContent;
+    let duration = 2000; // default duration
+    
+    if (element.classList.contains('typing-effect-fast')) {
+      duration = 1500;
+    } else if (element.classList.contains('typing-effect-medium')) {
+      duration = 2500;
+    }
+    
+    // Get delay from classes
+    let delay = 0;
+    element.classList.forEach(className => {
+      if (className.startsWith('typing-delay-')) {
+        delay = parseInt(className.split('-')[2]) * 500;
+      }
+    });
+    
+    // Remove caret after animation completes
+    setTimeout(() => {
+      element.classList.add('finished');
+    }, delay + duration + 500);
+  });
+}
+
+// Enhanced scroll reveal for typing elements
+const revealTypingElements = () => {
+  const typingElements = document.querySelectorAll('.typing-effect, .typing-effect-fast, .typing-effect-medium');
+  
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.9 &&
+      rect.bottom >= 0
+    );
+  };
+  
+  typingElements.forEach(element => {
+    if (isInViewport(element) && !element.classList.contains('started')) {
+      element.classList.add('started');
+      // Trigger typing animation when element comes into view
+      element.style.animationPlayState = 'running';
+    }
+  });
+};
+
+// Add typing reveal to scroll listener
+window.addEventListener('scroll', revealTypingElements);
+window.addEventListener('load', revealTypingElements);
   

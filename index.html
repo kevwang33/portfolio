@@ -54,56 +54,66 @@
 
     <section class="work" id="work">
       <div class="row">
-        <h2>My Work</h2>
+        <h2 class="typing-effect typing-delay-1">My Work</h2>
         <div class="work__gallery">
 
           <!-- Project Cards -->
           <div class="project-card" onclick="toggleProjectDetails('project1')">
             <div class="project-card__image">
-              <img src="./images/hand_gif.gif" alt="Hand Exoskeleton" />
+              <img src="./images/bubble_tea.gif" alt="Automated Bubble Tea Machine" />
               <div class="project-card__overlay">
-                <h3>Hand Exoskeleton</h3>
-                <p>Click to learn more</p>
+                <h3 class="typing-effect-fast typing-delay-2">Automated Bubble Tea Machine</h3>
+                <p class="typing-effect-fast typing-delay-3">Click to learn more</p>
               </div>
             </div>
           </div>
 
           <div class="project-card" onclick="toggleProjectDetails('project2')">
             <div class="project-card__image">
-              <img src="./images/demo.gif" alt="EMG-controlled Robot Hand" />
+              <img src="./images/hand_gif.gif" alt="Hand Exoskeleton" />
               <div class="project-card__overlay">
-                <h3>EMG-controlled Robot Hand</h3>
-                <p>Click to learn more</p>
+                <h3 class="typing-effect-fast typing-delay-2">Hand Exoskeleton</h3>
+                <p class="typing-effect-fast typing-delay-3">Click to learn more</p>
               </div>
             </div>
           </div>
 
           <div class="project-card" onclick="toggleProjectDetails('project3')">
             <div class="project-card__image">
-              <img src="./images/waterbottle.jpg" alt="Smart Water Bottle" />
+              <img src="./images/demo.gif" alt="EMG-controlled Robot Hand" />
               <div class="project-card__overlay">
-                <h3>Smart Water Bottle</h3>
-                <p>Click to learn more</p>
+                <h3 class="typing-effect-fast typing-delay-2">EMG-controlled Robot Hand</h3>
+                <p class="typing-effect-fast typing-delay-3">Click to learn more</p>
               </div>
             </div>
           </div>
 
           <div class="project-card" onclick="toggleProjectDetails('project4')">
             <div class="project-card__image">
-              <img src="./images/Pong1.gif" alt="Pong Game" />
+              <img src="./images/waterbottle.jpg" alt="Smart Water Bottle" />
               <div class="project-card__overlay">
-                <h3>Pong Game</h3>
-                <p>Click to learn more</p>
+                <h3 class="typing-effect-fast typing-delay-2">Smart Water Bottle</h3>
+                <p class="typing-effect-fast typing-delay-3">Click to learn more</p>
               </div>
             </div>
           </div>
 
           <div class="project-card" onclick="toggleProjectDetails('project5')">
             <div class="project-card__image">
+              <img src="./images/Pong1.gif" alt="Pong Game" />
+              <div class="project-card__overlay">
+                <h3 class="typing-effect-fast typing-delay-2">Pong Game</h3>
+                <p class="typing-effect-fast typing-delay-3">Click to learn more</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" onclick="toggleProjectDetails('project6')">
+            <div class="project-card__image">
               <img src="./images/mems.png" alt="MEMS Design Paper" />
               <div class="project-card__overlay">
-                <h3>MEMS Design Paper</h3>
-                <p>Click to learn more</p>
+                <h3 class="typing-effect-fast typing-delay-2">MEMS Design Paper</h3>
+                <p class="typing-effect-fast typing-delay-3">Click to learn more</p>
               </div>
             </div>
           </div>
@@ -118,11 +128,43 @@
         <span class="project-details__close" onclick="toggleProjectDetails('project1')">&times;</span>
         <div class="project-details__body">
           <div class="project-details__image">
+            <img src="./images/bubble_tea.gif" alt="Automated Bubble Tea Machine" />
+          </div>
+          <div class="project-details__text">
+            <h3 class="typing-effect-medium typing-delay-1">Automated Bubble Tea Machine</h3>
+            <p class="typing-effect typing-delay-2"><strong>Embedded Engineer | April 2025 - Present</strong><br>
+            Munch Industries Inc. | Philadelphia, PA</p>
+            <p class="typing-effect typing-delay-3">Developed comprehensive embedded systems for automated bubble tea production, implementing real-time control systems and distributed communication protocols for seamless operation.</p>
+            <ul class="project-details__list">
+              <li>Zephyr RTOS</li>
+              <li>CAN Communication Protocol</li>
+              <li>End-to-End Timing Control</li>
+              <li>Process Control Software</li>
+              <li>Unit Testing Framework (FFF & Ztest)</li>
+              <li>Mock Drivers</li>
+              <li>Distributed Embedded Systems</li>
+              <li>Real-time Data Exchange</li>
+            </ul>
+            <div class="project-details__links">
+              <a href="https://munch-industries.com/about" class="btn btn--pink" target="_blank">
+                Learn About Munch Industries
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project2" class="project-details">
+      <div class="project-details__content">
+        <span class="project-details__close" onclick="toggleProjectDetails('project2')">&times;</span>
+        <div class="project-details__body">
+          <div class="project-details__image">
             <img src="./images/hand_gif.gif" alt="Hand Exoskeleton" />
           </div>
           <div class="project-details__text">
-            <h3>Hand Exoskeleton</h3>
-            <p>A 3D printed hand exoskeleton with a custom designed 4 layer PCB.</p>
+            <h3 class="typing-effect-medium typing-delay-1">Hand Exoskeleton</h3>
+            <p class="typing-effect typing-delay-2">A 3D printed hand exoskeleton with a custom designed 4 layer PCB.</p>
             <ul class="project-details__list">
               <li>Altium Designer</li>
               <li>Embedded C</li>
@@ -142,16 +184,16 @@
       </div>
     </div>
 
-    <div id="project2" class="project-details">
+    <div id="project3" class="project-details">
       <div class="project-details__content">
-        <span class="project-details__close" onclick="toggleProjectDetails('project2')">&times;</span>
+        <span class="project-details__close" onclick="toggleProjectDetails('project3')">&times;</span>
         <div class="project-details__body">
           <div class="project-details__image">
             <img src="./images/demo.gif" alt="EMG-controlled Robot Hand" />
           </div>
           <div class="project-details__text">
-            <h3>EMG-controlled Robot Hand</h3>
-            <p>A robot hand that mirrors the finger movement of the user.</p>
+            <h3 class="typing-effect-medium typing-delay-1">EMG-controlled Robot Hand</h3>
+            <p class="typing-effect typing-delay-2">A robot hand that mirrors the finger movement of the user.</p>
             <ul class="project-details__list">
               <li>Tensorflow Lite</li>
               <li>Embedded C</li>
@@ -170,16 +212,16 @@
       </div>
     </div>
 
-    <div id="project3" class="project-details">
+    <div id="project4" class="project-details">
       <div class="project-details__content">
-        <span class="project-details__close" onclick="toggleProjectDetails('project3')">&times;</span>
+        <span class="project-details__close" onclick="toggleProjectDetails('project4')">&times;</span>
         <div class="project-details__body">
           <div class="project-details__image">
             <img src="./images/waterbottle.jpg" alt="Smart Water Bottle" />
           </div>
           <div class="project-details__text">
-            <h3>Smart Water Bottle</h3>
-            <p>A water bottle (prototype) that detects water quality, water level, and heart rate. In addition, it remotely tracks the user's daily hydration level and sends drinking reminders.</p>
+            <h3 class="typing-effect-medium typing-delay-1">Smart Water Bottle</h3>
+            <p class="typing-effect typing-delay-2">A water bottle (prototype) that detects water quality, water level, and heart rate. In addition, it remotely tracks the user's daily hydration level and sends drinking reminders.</p>
             <ul class="project-details__list">
               <li>Bare Metal C</li>
               <li>ADC</li>
@@ -196,16 +238,16 @@
       </div>
     </div>
 
-    <div id="project4" class="project-details">
+    <div id="project5" class="project-details">
       <div class="project-details__content">
-        <span class="project-details__close" onclick="toggleProjectDetails('project4')">&times;</span>
+        <span class="project-details__close" onclick="toggleProjectDetails('project5')">&times;</span>
         <div class="project-details__body">
           <div class="project-details__image">
             <img src="./images/Pong1.gif" alt="Pong Game" />
           </div>
           <div class="project-details__text">
-            <h3>Pong Game</h3>
-            <p>Single/two player pong game with player control on both physical joysticks and remote Blynk platform.</p>
+            <h3 class="typing-effect-medium typing-delay-1">Pong Game</h3>
+            <p class="typing-effect typing-delay-2">Single/two player pong game with player control on both physical joysticks and remote Blynk platform.</p>
             <ul class="project-details__list">
               <li>Bare Metal C</li>
               <li>Serial Communication</li>
@@ -222,16 +264,16 @@
       </div>
     </div>
 
-    <div id="project5" class="project-details">
+    <div id="project6" class="project-details">
       <div class="project-details__content">
-        <span class="project-details__close" onclick="toggleProjectDetails('project5')">&times;</span>
+        <span class="project-details__close" onclick="toggleProjectDetails('project6')">&times;</span>
         <div class="project-details__body">
           <div class="project-details__image">
             <img src="./images/mems.png" alt="MEMS Design Paper" />
           </div>
           <div class="project-details__text">
-            <h3>MEMS Design Paper</h3>
-            <p>Research and design documentation for MEMS (Micro-Electro-Mechanical Systems) technology and applications.</p>
+            <h3 class="typing-effect-medium typing-delay-1">MEMS Design Paper</h3>
+            <p class="typing-effect typing-delay-2">Research and design documentation for MEMS (Micro-Electro-Mechanical Systems) technology and applications.</p>
             <ul class="project-details__list">
               <li>MEMS Technology</li>
               <li>Microfabrication</li>
@@ -253,11 +295,11 @@
 
     <section class="about" id="about">
       <div class="row">
-        <h2>About Me</h2>
+        <h2 class="typing-effect typing-delay-1">About Me</h2>
         <div class="about__content">
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
-            <p>
+            <p class="typing-effect typing-delay-2">
               Hi! My name is Kevin, an electrical engineering student simultaneously pursuing an undergraduate and a master's degree at the University of Pennsylvania. Specializing in embedded firmware and hardware design, I strive to make smart devices that are practical to the users and have real world impacts. When I am not tinkering with circuits and programming the MCUs, you can find me making music on Upenn's chamber ensemble or rallying with my friends on the tennis court. 
             </p>
             <!-- Provide a link to your resume -->
@@ -277,9 +319,9 @@
 
   <section class="contact" id="contact">
     <div class="row">
-      <h2>Get in Touch</h2>
+      <h2 class="typing-effect typing-delay-1">Get in Touch</h2>
       <div class="contact__info">
-        <p>
+        <p class="typing-effect typing-delay-2">
           I am open to part-time/summer internship opportunities. You can reach me through my email!
         </p>
         <!-- Replace the email with yours -->

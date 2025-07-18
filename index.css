@@ -49,9 +49,24 @@
     to { width: 100%; }
 }
 
+@keyframes typing-slow {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes typing-fast {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: #dc3545; }
+}
+
+@keyframes char-typing {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 * {
@@ -201,7 +216,8 @@ h2 {
     margin-bottom: var(--gutter-medium);
     animation: slideInLeft var(--transition-medium) forwards;
     opacity: 0;
-    color: #dc3545;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 h2::after {
@@ -613,13 +629,16 @@ body:not(.user-is-tabbing) a:focus {
 .project-card__overlay h3 {
     margin-bottom: 0.5rem;
     font-size: var(--font-size-medium);
-    color: #dc3545;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
 }
 
 .project-card__overlay p {
     font-size: var(--font-size-small);
-    opacity: 0.9;
-    color: #dc3545;
+    opacity: 0.95;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* --------------------------------------- */
@@ -704,7 +723,9 @@ body:not(.user-is-tabbing) a:focus {
 .project-details__text h3 {
     font-size: var(--font-size-large);
     margin-bottom: 1.5rem;
-    color: var(--pink);
+    color: #000000;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .project-details__text p {
@@ -886,4 +907,69 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__item:nth-child(3) {
     animation-delay: 0.3s;
+}
+
+/* Typing effect classes */
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #dc3545;
+    animation: typing-slow 2s steps(40, end), blink-caret 0.75s step-end infinite;
+    width: 0;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.typing-effect.started {
+    animation-play-state: running;
+}
+
+.typing-effect-fast {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #dc3545;
+    animation: typing-fast 1.5s steps(30, end), blink-caret 0.75s step-end infinite;
+    width: 0;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.typing-effect-fast.started {
+    animation-play-state: running;
+}
+
+.typing-effect-medium {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #dc3545;
+    animation: typing 2.5s steps(50, end), blink-caret 0.75s step-end infinite;
+    width: 0;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.typing-effect-medium.started {
+    animation-play-state: running;
+}
+
+.typing-delay-1 { animation-delay: 0.5s; }
+.typing-delay-2 { animation-delay: 1.0s; }
+.typing-delay-3 { animation-delay: 1.5s; }
+.typing-delay-4 { animation-delay: 2.0s; }
+.typing-delay-5 { animation-delay: 2.5s; }
+.typing-delay-6 { animation-delay: 3.0s; }
+.typing-delay-7 { animation-delay: 3.5s; }
+.typing-delay-8 { animation-delay: 4.0s; }
+
+/* Character by character typing */
+.char-typing {
+    animation: char-typing 0.1s forwards;
+    opacity: 0;
+}
+
+/* Remove caret after animation */
+.typing-effect.finished,
+.typing-effect-fast.finished,
+.typing-effect-medium.finished {
+    border-right: none;
 }
