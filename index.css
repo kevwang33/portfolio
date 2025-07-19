@@ -193,8 +193,8 @@ h2 {
     margin-bottom: var(--gutter-medium);
     animation: slideInLeft var(--transition-medium) forwards;
     opacity: 0;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: var(--dark-text);
+    text-shadow: none;
 }
 
 h2::after {
